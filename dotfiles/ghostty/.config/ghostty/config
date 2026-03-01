@@ -1,0 +1,9 @@
+theme = Rose Pine
+background = 000000
+
+shell-integration-features = no-cursor,no-sudo,title
+cursor-style-blink = false
+font-feature = -calt
+font-feature = -dlig
+font-feature = -liga
+app-notifications = no-clipboard-copy
