@@ -274,7 +274,24 @@ hl.bind(mod .. " + " .. "SHIFT" .. " + " .. "J", hl.dsp.window.move({ direction 
 hl.bind(mod .. " + " .. "SHIFT" .. " + " .. "K", hl.dsp.window.move({ direction = "u" }))
 hl.bind(mod .. " + " .. "SHIFT" .. " + " .. "L", hl.dsp.window.move({ direction = "r" }))
 
-hl.bind("F4", hl.dsp.pass({ window = "class:^(discord)$" }))
+hl.bind("F4",
+    function()
+        hl.dispatch(hl.dsp.send_key_state({
+            mods = "CONTROL + SHIFT",
+            key = "M",
+            state = "down",
+            window =
+            "class:^(discord)$"
+        }))
+        hl.dispatch(hl.dsp.send_key_state({
+            mods = "CONTROL + SHIFT",
+            key = "M",
+            state = "up",
+            window =
+            "class:^(discord)$"
+        }))
+    end)
+
 
 hl.bind(mod .. " + " .. "mouse_down", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mod .. " + " .. "mouse_up", hl.dsp.focus({ workspace = "e+1" }))
